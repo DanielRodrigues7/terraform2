@@ -22,7 +22,7 @@ jobs:
   terraform:
     name: Terraform ${{ github.event.inputs.action }}
     runs-on: ubuntu-latest
-    environment: dev
+    
     concurrency:
       group: terraform-${{ github.ref }}
       cancel-in-progress: false
@@ -71,3 +71,4 @@ jobs:
         env:
           ARM_USE_OIDC: true
         run: terraform destroy -input=false -auto-approve
+
