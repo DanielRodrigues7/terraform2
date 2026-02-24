@@ -28,7 +28,7 @@ jobs:
       cancel-in-progress: false
     defaults:
       run:
-        working-directory: azure/vm   # pasta onde estão seus .tf da VM
+        working-directory: vm   # pasta onde estão seus .tf da VM
 
     steps:
       - name: Checkout repository
@@ -71,4 +71,5 @@ jobs:
         env:
           ARM_USE_OIDC: true
         run: terraform destroy -input=false -auto-approve
+
 
